@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+.default-btn {
+  background-color: rgb(130, 171, 66);
+  color: white;
+}
+.swiper-pagination-bullet {
+  background: rgba($color: #efefef69, $alpha: 0.4) !important;
+  width: 10px !important;
+  height: 10px !important;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #fff !important;
+  width: 12px !important;
+  height: 12px !important;
+}

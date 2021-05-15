@@ -28,9 +28,14 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/swiper/css/swiper.min.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.min.js",
+               "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -123,6 +128,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "news-workshop"
+    }
+  },
+  "defaultProject": "news-workshop",
+  "cli": {
+    "analytics": "7e222878-526a-4ee3-b805-1653d1253f20"
+  }
 }

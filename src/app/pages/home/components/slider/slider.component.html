@@ -1,1 +1,29 @@
-<p>slider works!</p>
+<div class="swiper-container" [swiper]="sliderConfig">
+  <div class="overlay d-flex align-items-center">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-12">
+          <div class="w-60 text-center">
+            <h1 class="text-white mb-4">{{'SLIDER.upper_txt' | translate}}</h1>
+            <h4 class="text-white ml-auto mr-auto mb-5">
+              {{'SLIDER.lower_txt'|translate}}
+            </h4>
+            <button class="default-btn btn donate">
+              {{'SLIDER.btn_txt'|translate}}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="swiper-wrapper">
+
+    <div class="swiper-slide" *ngFor="let img of images">
+      <img [src]="img" class="img-fluid offers-img">
+    </div>
+  </div>
+
+  <div class="swiper-pagination"></div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+</div>
