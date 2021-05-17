@@ -1,0 +1,83 @@
+.article-details {
+  margin-top: 4rem;
+  .card {
+    box-shadow: unset;
+    .card-body {
+      .share-icons {
+        text-align: right;
+        span {
+          &.fav {
+            margin-right: 1rem;
+          }
+          img {
+            width: 0.9rem;
+          }
+          img:nth-child(2) {
+            margin-left: 1rem;
+          }
+        }
+      }
+    }
+    .card-img-top {
+      max-height: 320px;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .card-title {
+      height: auto;
+    }
+
+    .card-text {
+      height: auto;
+      color: #565960;
+    }
+  }
+
+  .related-topics {
+    .related-topic-card {
+      border-radius: 5px;
+      position: relative;
+      overflow: hidden;
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        padding: 10px;
+        background-color: rgba($color: #7e7e7e, $alpha: 0.35);
+
+        .content {
+          border-radius: 5px;
+          background-color: rgba($color: #f5f5f5, $alpha: 0.8);
+          width: 100%;
+          padding: 15px;
+
+          .view-more {
+            color: var(--green-color);
+            transition: all 0.5s ease-in-out;
+            &:hover {
+              img {
+                transition: all 0.5s ease-in-out;
+                width: 30px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .last-section {
+    .view-more {
+      text-align: right;
+      color: var(--green-color);
+    }
+  }
+}
+.bread-crumb {
+  a {
+    cursor: pointer;
+  }
+}

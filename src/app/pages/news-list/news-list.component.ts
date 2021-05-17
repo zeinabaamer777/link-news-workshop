@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Article } from "src/app/core/models/articles";
 import { Category } from "src/app/core/models/category";
 import { ReadArticlesJsonService } from '../../core/services/read-articles-json.service';
+import { ArticlesManager } from '../../core/managers/articles.manager';
 
 
 @Component({
@@ -9,27 +10,26 @@ import { ReadArticlesJsonService } from '../../core/services/read-articles-json.
   templateUrl: './news-list.component.html',
   styleUrls: ['./news-list.component.scss']
 })
+
 export class NewsListComponent implements OnInit {
   public term: string;
-  public Articles: Article[];
+  public articles: Article[];
   public numerPerPage: number = 12;
   public SelectedPage: number = 1;
   public PageinatorStart: number = 0;
   public PageinatorEnd: number = this.numerPerPage;
-  public Categories: Category[];
+  public categories: Category[];
   public selectedCategoryId: any;
-  constructor(private readArticlesJson: ReadArticlesJsonService) { }
+  allArticles: any;
+  constructor(private articlesManager: ArticlesManager) { }
 
   ngOnInit() {
-    this.getArticles()
-  }
-
-  getArticles() {
-    this.readArticlesJson.getArticles().subscribe((res) => {
-      this.Categories = res.sourceCategory;
-      this.Articles = res.articles;
-      this.Articles = this.sort({ type: "desc" });
+    this.articlesManager.articles$.subscribe(res => {
+      this.categories = res.sourceCategory;
+      this.articles = res.articles;
+      // this.articles = this.sort({ type: "desc" });
     });
+    this.articlesManager.getArticles();
   }
 
   //#region pagination
@@ -40,8 +40,8 @@ export class NewsListComponent implements OnInit {
   }
 
   get pagesNumbers(): number[] {
-    if (this.Articles && this.Articles.length > this.numerPerPage) {
-      let _pages = Math.ceil(this.Articles.length / this.numerPerPage);
+    if (this.articles && this.articles.length > this.numerPerPage) {
+      let _pages = Math.ceil(this.articles.length / this.numerPerPage);
       let _pagesArr = [];
       for (let index = 1; index <= _pages; index++) {
         _pagesArr.push(index);
@@ -59,7 +59,7 @@ export class NewsListComponent implements OnInit {
     debugger
     let sorted_articles: Article[];
     if ($event.type == "desc") {
-      sorted_articles = this.Articles.sort((a, b) => {
+      sorted_articles = this.articles.sort((a, b) => {
         if (a.title > b.title) {
           return 1;
         } else {
@@ -67,7 +67,7 @@ export class NewsListComponent implements OnInit {
         }
       });
     } else {
-      sorted_articles = this.Articles.sort((a, b) => {
+      sorted_articles = this.articles.sort((a, b) => {
         if (a.title > b.title) {
           return -1;
         } else {
@@ -82,10 +82,12 @@ export class NewsListComponent implements OnInit {
   //#region category selection
   selectCategory(param) {
     if (this.selectedCategoryId === 0) {
-      this.Articles = this.Articles;
+      this.articles = this.articles;
     }
     this.selectedCategoryId = param.target.value;
-    this.Articles = this.Articles.filter(el => el.sourceID == this.selectedCategoryId)
+    this.articles = this.articles.filter(el => el.sourceID == this.selectedCategoryId)
   }
+
+
   //#endregion
 }

@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { MaterialModule } from './material.module';
 import { HeaderComponent } from './layouts/header/header.component';
 import { FooterComponent } from './layouts/footer/footer.component';
-import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { SideMenuComponent } from './components/side-menu/side-menu.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -17,10 +16,10 @@ import { RouterModule } from '@angular/router';
   declarations: [
     HeaderComponent,
     FooterComponent,
-    BreadcrumbComponent,
     SideMenuComponent,
     NewsCardComponent,
-    DateFormatePipe
+    DateFormatePipe,
+
   ],
   imports: [
     CommonModule,
@@ -37,7 +36,6 @@ import { RouterModule } from '@angular/router';
     MaterialModule,
     HeaderComponent,
     FooterComponent,
-    BreadcrumbComponent,
     TranslateModule,
     SideMenuComponent,
     NgbModule,

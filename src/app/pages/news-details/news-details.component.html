@@ -1,1 +1,112 @@
-<p>news-details works!</p>
+<div class="w-100 grey-body article-details">
+  <div class="container news mt-4 pt-4">
+
+    <div class="row mb-4 bread-crumb">
+      <div class="col-12 mb-2">
+        <a routerLink="/" class="main-color regular">Home</a>
+        <span class="ml-3 mr-3"><img src="assets/images/arrow.png" alt="arrow"></span>
+        <a routerLink="/news" class="regular main-color">News</a>
+        <span class="ml-3 mr-3"><img src="assets/images/arrow.png" alt="arrow"></span>
+        <a routerLink="/article-details" class="regular grey-color">News Details</a>
+      </div>
+      <div class="col-12">
+        <h2 class="semiBold section-title mb-3">News Details</h2>
+      </div>
+    </div>
+
+    <div class="row card-details">
+      <div class="col-12">
+        <div class="card">
+          <span>
+            <img class="card-img-top" src="{{article['urlToImage']}}" alt="Card image cap">
+          </span>
+          <div class="card-body p-3">
+
+            <p class="regular card-text mb-2">Category Name</p>
+            <div class="d-flex justify-content-between">
+              <h3 class="card-title OpenSans-Semibold">{{article?.title | slice:0:60}}{{article?.title?.length > 60 ?
+                '...' : ''}}</h3>
+
+              <div class="text-right share-icons mb-2">
+                <span class="mr-3 fav">
+                  <img src="assets/images/favourite.png" alt="fav">
+                </span>
+                <span>
+
+                  <img src="assets/images/share.png" alt="share">
+                </span>
+              </div>
+            </div>
+
+            <p class="card-text regular">{{article.description}}
+            </p>
+            <p class="card-text regular">{{article.content}}
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-3 related-topics">
+      <div class="col-12">
+        <h2 class="semiBold section-title mb-3">Related Topics</h2>
+      </div>
+
+      <div class="col-md-4 col-12 mb-4">
+        <div class="related-topic-card">
+          <img src="assets/images/related1.jpg" alt="related-img" class="img-fluid">
+          <div class="overlay d-flex align-items-end">
+            <div class="content">
+              <p class="mb-0 regular">Category</p>
+              <h3 class="semiBold">New Artificial Intelligence Apps</h3>
+              <a href="">
+                <p class="semiBold section-title view-more mb-0">View Details <img
+                    src="assets/images/header/view-more.svg" alt="view-more" class="ml-2"></p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-12 mb-4">
+        <div class="related-topic-card">
+          <img src="assets/images/related2.jpg" alt="related-img" class="img-fluid">
+          <div class="overlay d-flex align-items-end">
+            <div class="content">
+              <p class="mb-0 regular">Category</p>
+              <h3 class="semiBold">New Artificial Intelligence Apps</h3>
+              <a href="">
+                <p class="semiBold section-title view-more mb-0">View Details <img
+                    src="assets/images/header/view-more.svg" alt="view-more" class="ml-2"></p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-12 mb-4">
+        <div class="related-topic-card">
+          <img src="assets/images/related3.jpg" alt="related-img" class="img-fluid">
+          <div class="overlay d-flex align-items-end">
+            <div class="content">
+              <p class="mb-0 regular">Category</p>
+              <h3 class="semiBold">New Artificial Intelligence Apps</h3>
+              <a href="">
+                <p class="semiBold section-title view-more mb-0">View Details <img
+                    src="assets/images/header/view-more.svg" alt="view-more" class="ml-2"></p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 text-right last-section">
+        <a href="">
+          <p class="semiBold section-title view-more">View All <img src="assets/images/header/view-more.svg"
+              alt="view-more" class="ml-2"></p>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -14,8 +14,7 @@ export class NewsCardComponent implements OnInit {
   ngOnInit(): void {
   }
   ngOnChanges(): void {
-    console.log(this.article)
-
+    // console.log(this.article)
   }
 
 }

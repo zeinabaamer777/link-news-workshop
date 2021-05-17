@@ -37,7 +37,6 @@ export class SliderComponent implements OnInit {
   constructor(public translate: TranslateService) { }
 
   ngOnInit(): void {
-    console.log(this.images)
   }
 
 }

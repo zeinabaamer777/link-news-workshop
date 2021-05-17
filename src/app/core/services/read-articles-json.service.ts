@@ -10,7 +10,7 @@ export class ReadArticlesJsonService {
 
   constructor(private http: HttpClient) { }
 
-  public getArticles(): Observable<NewsModel> {
-    return this.http.get<NewsModel>('../../../assets/json-files/newsapi.json').pipe();
+  public getArticles(): Observable<any> {
+    return this.http.get('../../../assets/json-files/newsapi.json').pipe();
   }
 }

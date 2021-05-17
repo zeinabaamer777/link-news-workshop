@@ -1,28 +1,29 @@
-<div class="news-Page py-5 mt-6">
+<div class="news-page py-5 mt-6">
   <div class="container">
-    <div class="row">
+    <div class="row mb-4">
+      <div class="col-12 mb-2 bread-crumb">
+        <a routerLink="/" class="main-color regular">Home</a>
+        <span class="ml-3 mr-3"><img src="assets/images/arrow.png" alt="arrow"></span>
+        <a routerLink="/news" class="regular grey-color">News</a>
+      </div>
       <div class="col-12">
-        <app-breadcrumb></app-breadcrumb>
-        <h1 class="mb-4 news-page-title">News</h1>
+        <h2 class="semiBold section-title mb-3">News</h2>
       </div>
     </div>
-    <div class="row">
-      <div class="col-12 mb-4">
-      </div>
-    </div>
+
     <div class="row">
       <div class="col-12 filter">
         <form class="row">
           <div class="col-lg-2 col-md-4 col-6 mb-4 date-time">
             <label for="" class="mb-1 semiBold">From</label>
             <input placeholder="Select" class="textbox-n form-control" type="text" onfocus="(this.type='date')"
-              id="date">
+              onblur="(this.type='date')" id="date">
           </div>
 
           <div class="col-lg-2 col-md-4 col-6 mb-4 date-time">
             <label for="" class="mb-1 semiBold">To</label>
             <input placeholder="Select" class="textbox-n form-control" type="text" onfocus="(this.type='date')"
-              id="date_2">
+              onblur="(this.type='date')" id="date_2">
           </div>
 
 
@@ -30,7 +31,7 @@
             <label for="" class="mb-1 semiBold">Category</label>
             <select name="" id="" class="form-control regular" (change)="selectCategory($event)">
               <option value="0" selected disabled>select</option>
-              <option [value]="source.id" *ngFor="let source of Categories">{{source.name}}</option>
+              <option [value]="source.id" *ngFor="let source of categories">{{source.name}}</option>
             </select>
 
           </div>
@@ -55,14 +56,9 @@
               </div>
             </div>
           </div>
-          <!-- <div class="col-lg-1 col-sm-2 col-4 pl-2 pr-2 sort mb-4 d-flex align-items-end pb-2">
-            <a href=""><span class="regular">Sort by</span> <img src="assets/images/sort.svg" alt="sort"
-                class="ml-2"></a>
-          </div> -->
         </form>
       </div>
-      <div class="col-md-4 mb-4" *ngFor="let article of Articles  |filter:term | slice :PageinatorStart:PageinatorEnd"
-        routerLink="/news-details/{{article?.id}}">
+      <div class="col-md-4 mb-4" *ngFor="let article of articles | slice :PageinatorStart:PageinatorEnd | filter:term ">
         <app-news-card [article]="article"></app-news-card>
       </div>
     </div>
