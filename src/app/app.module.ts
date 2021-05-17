@@ -10,6 +10,10 @@ import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -21,11 +25,13 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     AppComponent
   ],
   imports: [
+    CommonModule,
     HttpClientModule,
     BrowserModule,
-    BrowserAnimationsModule,
     AppRoutingModule,
     SharedModule,
+    ReactiveFormsModule,
+    FormsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -33,7 +39,9 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
         deps: [HttpClient],
       },
     }),
-    SwiperModule
+    SwiperModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(), // ToastrModule added
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,119 @@
+// .side__menu {
+//   position: fixed;
+//   width: 35%;
+//   min-width: 400px;
+//   background: #048896;
+//   height: calc(100% - 84px);
+//   z-index: 20;
+//   opacity: 0;
+//   visibility: hidden;
+//   transition: 0.2s all ease-in;
+//   .social__bar {
+//     border-right: 1px solid rgb(255 255 255 / 0.04);
+//   }
+//   .navigation__area {
+//     border-top: 1px solid rgb(255 255 255 / 0.04);
+//     ul {
+//       margin: 0;
+//       li {
+//         margin-bottom: 20px;
+//         ul li {
+//           margin-bottom: 5px;
+//           a {
+//             font-size: 15px;
+//             font-weight: normal;
+//             color: #e7e7e7;
+//           }
+//         }
+//         &:last-child {
+//           margin-bottom: 0;
+//         }
+//       }
+//       li a {
+//         font-size: 30px;
+//         text-decoration: none;
+//         color: #ffffff;
+//         font-weight: 600;
+//       }
+//       li.active a {
+//         color: #8dc043;
+//       }
+//     }
+//   }
+// }
+
+// .side__menu.show {
+//   opacity: 1;
+//   visibility: visible;
+// }
+
+.main-menu {
+  position: fixed;
+  top: 5.2rem;
+  left: 0;
+  width: 40%;
+  background: var(--main-color);
+  height: calc(100% - 84px);
+  transition: all 0.5s ease-in-out;
+  border-top: 1px solid rgba($color: #fff, $alpha: 0.24);
+  min-width: 400px;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  @media (max-width: 991px) {
+    top: 6.8rem;
+    overflow: scroll;
+  }
+
+  @media (max-width: 576px) {
+    width: 80%;
+  }
+
+  li {
+    a {
+      color: #fff;
+      p {
+        font-size: 0.9rem;
+      }
+    }
+
+    h3 {
+      @media (max-width: 740px) {
+        font-size: 1.3rem;
+      }
+    }
+  }
+
+  a,
+  p {
+    transition: all 0.5s ease-in-out;
+    &:hover {
+      color: var(--green-color) !important;
+    }
+  }
+
+  .contact-us {
+    margin-top: 8rem;
+
+    @media (max-width: 567px) {
+      margin-top: 4rem;
+    }
+  }
+
+  .social-media {
+    display: grid;
+    text-align: center;
+
+    .social-icons {
+      img {
+        width: 1rem;
+        transform: rotate(270deg);
+      }
+    }
+  }
+}
+
+.main-menu.show {
+  opacity: 1;
+  visibility: visible;
+}

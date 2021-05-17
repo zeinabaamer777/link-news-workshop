@@ -1,1 +1,63 @@
-<p>footer works!</p>
+<div class="footer w-100 pt-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-6 col-6">
+        <ul class="p-0">
+          <li class="pt-1 pb-1"><a href="#" class="regular">News</a></li>
+
+          <li class="pt-1 pb-1"><a href="#" class="regular">Events</a></li>
+          <li class="pt-1 pb-1"><a href="#" class="regular">About</a></li>
+          <li class="pt-1 pb-1"><a href="#" class="regular">FAQs</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-md-6 col-6">
+        <ul class="p-0">
+          <li class="pt-1 pb-1"><a href="#" class="regular">Privacy Policy</a></li>
+          <li class="pt-1 pb-1"><a href="#" class="regular">Contact Us</a></li>
+          <li class="pt-1 pb-1"><a href="#" class="regular">Complains</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-md-6 col-12">
+
+        <label for="" class="regular">Subscribe to Newsletter</label>
+
+        <form class="form-inline my-2  mt-2" #subscForm="ngForm" (ngSubmit)="subscribe(subscForm)">
+          <input [(ngModel)]="user.email" name="mail" class="form-control regular" type="email"
+            placeholder="Email Address" autocomplete="off" required>
+          <button class="btn regular" type="submit" [disabled]="!subscForm.valid">Subscribe</button>
+        </form>
+      </div>
+
+      <div class="col-lg-3 col-md-6 col-12 mb-3 text-center">
+        <label for="" class="regular">Follow us on</label>
+        <div class="social-media mt-2">
+          <a href="#">
+            <img src="assets/images/social/instagram.svg" alt="">
+          </a>
+
+          <a href="#">
+            <img src="assets/images/social/youtube.svg" alt="">
+          </a>
+
+          <a href="#">
+            <img src="assets/images/social/linkedin.svg" alt="">
+          </a>
+
+          <a href="#">
+            <img src="assets/images/social/facebook.svg" alt="">
+          </a>
+
+          <a href="#">
+            <img src="assets/images/social/twitter.svg" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom w-100 p-3 text-center">
+    <p class="mb-0 regular text-white">All rights reserved - Link Development Company © 2020</p>
+  </div>
+</div>

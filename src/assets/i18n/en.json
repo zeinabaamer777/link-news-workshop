@@ -1,5 +1,9 @@
 {
-  "COMMON": {},
+  "COMMON": {
+    "search":"Search",
+    "sign_out": "Sign Out",
+    "subsc_txt": "Subscription Done"
+  },
   "SLIDER": {
     "upper_txt": "Al Foundation",
     "lower_txt":"is focused on inspiring the next generation of kids Healthcare professionals.",

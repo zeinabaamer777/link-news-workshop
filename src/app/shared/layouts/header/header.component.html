@@ -1,1 +1,104 @@
-<p>header works!</p>
+<header>
+  <nav class="navbar navbar-expand-md fixed-top">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between w-100 header-content">
+        <div class="d-flex align-items-center logo-container">
+
+          <span id="menu-icon" class="mr-5" (click)="toggleSideMenu()" [ngClass]="status ? 'open' : ''">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+
+          <div class=" nav-logo" routerLink="/">
+            <img src="../../../../assets/images/header/logo.png" width="65" class="ml-5" alt="">
+          </div>
+        </div>
+        <div class="d-flex align-items-center position-relative icons-container">
+          <div class="d-flex align-items-center icons">
+            <div class="search-icon p-2 rounded text-center" [class.hover-icon]="!showSearchInput"
+              (click)="openSearch()" (mouseleave)="showSearchInput = false" placement="bottom" ngbTooltip="search"
+              tooltipClass="tooltip-header-class">
+              <img src="../../../../assets/images/header/ic_search.png" width="25">
+            </div>
+
+            <div class="notifications ml-4 p-2  notification-bell hover-icon p-2 rounded text-center" placement="bottom"
+              ngbTooltip="notification" tooltipClass="tooltip-header-class">
+              <span (click)="showNotifications=!showNotifications" (mouseleave)="showNotifications = false">
+                <img src="../../../../assets/images/header/bell.png" alt="notification">
+              </span>
+              <div class="notification-holder p-2" *ngIf="showNotifications">
+                <p class="mb-1 title regular">Recent Notifications</p>
+                <ul class="p-0 mb-0 list-noti">
+                  <a href="" class="text-dark">
+                    <li class="notify regular pb-2 pt-2">You have an upcoming appoientment today! <span
+                        class="more">Check-in Now</span></li>
+
+                  </a>
+                  <a href="" class="text-dark">
+                    <li class="notify regular pb-2 pt-2">Rate Your latest service appoientment</li>
+
+                  </a>
+                  <a href="" class="text-dark">
+                    <li class="notify regular pb-2 pt-2">Your payment request has been approved</li>
+
+                  </a>
+                </ul>
+                <p class="text-center pt-3 "><a href="" class="all">
+                    All Notifications <img src="assets/images/header/view-more.svg" alt="">
+                  </a></p>
+              </div>
+
+
+            </div>
+
+            <div class="user-profile d-flex align-items-center py-1 px-4">
+              <img src="../../../../assets/images/header/user.png" width="60" alt="">
+              <span class="pl-1">User Name</span>
+            </div>
+            <div class="settings-menu text-center">
+              <div ngbDropdown class="d-inline-block">
+                <div class="hover-icon rounded p-2" placement="bottom" ngbTooltip="settings"
+                  tooltipClass="tooltip-header-class" id="dropdownBasic1" ngbDropdownToggle>
+                  <img src="../../../../assets/images/header/settings.png" width="25">
+                </div>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                  <p class="m-0 px-2">
+                    <small class="text-muted">Languages</small>
+                  </p>
+                  <button ngbDropdownItem class="d-flex justify-content-between">
+                    English
+                    <span class="float-right"><i class="fa fa-check"></i></span>
+                  </button>
+                  <button ngbDropdownItem class="d-flex justify-content-between">
+                    اللغه العربيه
+                  </button>
+                  <div class="dropdown-divider"></div>
+                  <p class="m-0 px-2">
+                    <small class="text-muted">font-size</small>
+                  </p>
+                  <div class="d-flex font-size-options px-2">
+                    <button ngbDropdownItem>A</button>
+                    <button ngbDropdownItem>A</button>
+                    <button ngbDropdownItem>A</button>
+                  </div>
+                  <div class="dropdown-divider"></div>
+                  <p class="m-0 px-2">
+                    <small class="text-muted">Acount</small>
+                  </p>
+                  <button ngbDropdownItem>
+                    {{'COMMON.sign_out'|translate}}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <input type="text" class="form-control search-input" [class.open]="showSearchInput"
+            [placeholder]="'COMMON.search'|translate">
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<app-side-menu [show]="showSideMenu"></app-side-menu>

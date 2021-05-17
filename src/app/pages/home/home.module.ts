@@ -6,6 +6,7 @@ import { HomeComponent } from './home.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { SwiperModule } from 'ngx-swiper-wrapper';
 import { SharedModule } from '../../shared/shared.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [

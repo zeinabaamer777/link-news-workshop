@@ -1,1 +1,89 @@
 <app-slider></app-slider>
+<!-- News Section -->
+<div class="bg-white py-4 latest-news-section">
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-between mb-3  latest-news-section-title">
+      <h2>Latest News</h2>
+      <a routerLink="/news">
+        View all
+        <img src="../../../assets/images/rightarrow.png" class="ml-2" alt="">
+      </a>
+    </div>
+    <div class="row">
+      <div class="col-md-4 mb-4" *ngFor="let article of articlesShowOnHome"
+        routerLink="news/newsdetails/{{article?.id}}">
+        <app-news-card [article]="article"></app-news-card>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- How We Helped -->
+<div class="how-we-helped">
+  <div class="section-overlay py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center section-title">
+          <h1 class="text-white text-center">How we have helped</h1>
+          <p class="text-white text-center">See how Al Foundation have promoted change locally and to the
+            world</p>
+        </div>
+      </div>
+      <div class="rect-containers">
+        <div class="rect-row top-row d-flex justify-content-between mt-5 pt-4">
+          <div class="rect d-flex flex-column align-items-center justify-content-center p-4">
+            <div class="rect-content text-center text-white">
+              <img src="../../../assets/images/icons/findplace.png" width="35" class="mb-2" alt="find place">
+              <p>Find place</p>
+              <p class="mb-0">+</p>
+            </div>
+          </div>
+          <div class="rect d-flex flex-column align-items-center justify-content-center p-4">
+            <div class="rect-content text-center text-white">
+              <img src="../../../assets/images/icons/Show-Hide password.png" width="50" class="mb-2" alt="find place">
+              <p>A'awen</p>
+              <p class="mb-0">+</p>
+            </div>
+          </div>
+          <div class="rect d-flex flex-column align-items-center justify-content-center p-4">
+            <div class="rect-content text-center text-white">
+              <img src="../../../assets/images/icons/info.png" width="50" class="mb-2" alt="find place">
+              <p>Omniyat</p>
+              <p class="mb-0">+</p>
+            </div>
+          </div>
+          <div class="rect d-flex flex-column align-items-center justify-content-center p-4">
+            <div class="rect-content text-center text-white">
+              <img src="../../../assets/images/icons/surface1.png" width="50" class="mb-2" alt="find place">
+              <p>Give Time</p>
+              <p class="mb-0">+</p>
+            </div>
+          </div>
+        </div>
+        <div class="rect-row botton-row d-flex justify-content-around">
+          <div class="rect d-flex flex-column align-items-center justify-content-center p-4">
+            <div class="rect-content text-center text-white">
+              <img src="../../../assets/images/icons/toufola.png" width="50" class="mb-2" alt="find place">
+              <p>Tofoula</p>
+              <p class="mb-0">+</p>
+            </div>
+          </div>
+          <div class="rect d-flex flex-column align-items-center justify-content-center p-4">
+            <div class="rect-content text-center text-white">
+              <img src="../../../assets/images/icons/fund.png" width="50" class="mb-2" alt="find place">
+              <p>Fundraising</p>
+              <p class="mb-0">+</p>
+            </div>
+          </div>
+          <div class="rect d-flex flex-column align-items-center justify-content-center p-4">
+            <div class="rect-content text-center text-white">
+              <img src="../../../assets/images/icons/Zakat.png" width="50" class="mb-2" alt="find place">
+              <p>Zakat</p>
+              <p class="mb-0">+</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

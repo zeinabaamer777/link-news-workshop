@@ -1,0 +1,56 @@
+/* colors region */
+:root {
+  --main-color: #038896;
+  --white-color: #ffffff;
+  --green-color: #8dc043;
+  --light-gery: #fbfbfb;
+  --dark-gray: #565960;
+  --grey-color: #afafaf;
+  --dark-color: #181c25;
+  --aqua-color: #00b9ff;
+  --text-grey: #707070;
+  --overlay-color: #3f3f3f;
+}
+
+/* fonts region */
+@font-face {
+  font-family: "OpenSans-Semibold";
+  src: url("../../../assets/fonts/OpenSans-Semibold.ttf");
+}
+
+@font-face {
+  font-family: "OpenSans-Bold";
+  src: url("../../../assets/fonts/OpenSans-Bold.ttf");
+}
+
+@font-face {
+  font-family: "OpenSans-Regular";
+  src: url("../../../assets/fonts/OpenSans-Regular.ttf");
+}
+
+.main-color {
+  color: var(--main-color);
+}
+
+.second-color {
+  color: var(--green-color);
+}
+.grey-color {
+  color: var(--grey-color);
+}
+
+.gray-text {
+  color: rgba($color: #efefef, $alpha: 0.65);
+}
+
+.bold {
+  font-family: OpenSans-Bold;
+}
+
+.semiBold {
+  font-family: OpenSans-Semibold;
+}
+
+.regular {
+  font-family: OpenSans-Regular;
+}

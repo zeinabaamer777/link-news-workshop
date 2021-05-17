@@ -1,0 +1,102 @@
+.latest-news-section {
+  margin-top: 5rem;
+}
+// Home Page Styles
+.latest-news-section {
+  .latest-news-section-title {
+    h2 {
+      font-weight: 600;
+      color: #000;
+    }
+    a {
+      color: var(--green-color);
+      font-weight: 600;
+      cursor: pointer;
+      &:hover {
+        color: var(--green-color);
+      }
+    }
+  }
+}
+
+.how-we-helped {
+  background: url("../../../assets/images/how-helped.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  .section-overlay {
+    background: rgb(0, 0, 0);
+    background: radial-gradient(
+      circle,
+      rgb(0 0 0 / 18%) 0%,
+      rgb(0 0 0 / 0.4) 100%
+    );
+    .section-title {
+      h1 {
+        font-weight: 600;
+      }
+      p {
+        font-size: 21px;
+      }
+    }
+    .rect-containers {
+      width: 90%;
+      margin: 100px auto;
+      .rect {
+        border: 3px solid #ffffff;
+        background: transparent;
+        cursor: pointer;
+        width: 180px;
+        height: 180px;
+        transform: rotateZ(45deg);
+        transition: 0.2s all ease-in;
+        &:hover {
+          background: var(--green-color);
+          border-color: var(--green-color);
+        }
+        .rect-content {
+          transform: rotateZ(-45deg);
+          p {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+          }
+        }
+      }
+      .botton-row {
+        width: 83%;
+        margin: auto;
+      }
+    }
+  }
+}
+
+.news-form {
+  .ng-select.ng-select-single .ng-select-container {
+    height: 55px;
+  }
+  .ng-select .ng-select-container .ng-value-container .ng-input > input {
+    height: 40px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .rect-containers {
+    .rect-row {
+      flex-direction: column;
+      .rect {
+        margin: 35px auto;
+        width: 120px !important;
+        height: 120px !important;
+        .rect-content {
+          img {
+            width: 25px;
+          }
+          p {
+            font-size: 16px !important;
+          }
+        }
+      }
+    }
+  }
+}

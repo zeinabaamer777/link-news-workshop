@@ -1,1 +1,86 @@
-<p>news-list works!</p>
+<div class="news-Page py-5 mt-6">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <app-breadcrumb></app-breadcrumb>
+        <h1 class="mb-4 news-page-title">News</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 mb-4">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 filter">
+        <form class="row">
+          <div class="col-lg-2 col-md-4 col-6 mb-4 date-time">
+            <label for="" class="mb-1 semiBold">From</label>
+            <input placeholder="Select" class="textbox-n form-control" type="text" onfocus="(this.type='date')"
+              id="date">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 mb-4 date-time">
+            <label for="" class="mb-1 semiBold">To</label>
+            <input placeholder="Select" class="textbox-n form-control" type="text" onfocus="(this.type='date')"
+              id="date_2">
+          </div>
+
+
+          <div class="col-lg-2 col-md-4 col-6 mb-4 ml-auto mr-auto select-container">
+            <label for="" class="mb-1 semiBold">Category</label>
+            <select name="" id="" class="form-control regular" (change)="selectCategory($event)">
+              <option value="0" selected disabled>select</option>
+              <option [value]="source.id" *ngFor="let source of Categories">{{source.name}}</option>
+            </select>
+
+          </div>
+
+          <div class="col-lg-5 col-sm-10 col-8 form-inline pr-2 mb-4 d-flex align-items-end">
+            <input class="form-control regular" type="text" id="search" placeholder="Search Services" name="term"
+              [(ngModel)]="term">
+
+
+            <button class="btn regular" type="submit">
+              <img src="assets/images/header/ic_search.png" alt="search">
+            </button>
+          </div>
+          <div class="col-lg-1 col-sm-2 col-4 pl-2 pr-2 sort d-flex align-items-end sort__by__group">
+            <div ngbDropdown class="d-inline-block">
+              <button class="btn btn-outline-primary" id="sortbutton" ngbDropdownToggle>Sort by
+                <img src="assets/images/sort.svg" alt="sort" class="ml-2">
+              </button>
+              <div ngbDropdownMenu aria-labelledby="sortbutton">
+                <button ngbDropdownItem (click)="sort('desc')">A to Z</button>
+                <button ngbDropdownItem (click)="sort('asc')">Z to A</button>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="col-lg-1 col-sm-2 col-4 pl-2 pr-2 sort mb-4 d-flex align-items-end pb-2">
+            <a href=""><span class="regular">Sort by</span> <img src="assets/images/sort.svg" alt="sort"
+                class="ml-2"></a>
+          </div> -->
+        </form>
+      </div>
+      <div class="col-md-4 mb-4" *ngFor="let article of Articles  |filter:term | slice :PageinatorStart:PageinatorEnd"
+        routerLink="/news-details/{{article?.id}}">
+        <app-news-card [article]="article"></app-news-card>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 text-center">
+        <div class="paginator">
+          <button class="m-1 btn btn-light btn-sm" [disabled]="SelectedPage == 1" (click)="changePage(SelectedPage-1)">
+            <i class="fa fa-angle-left"></i>
+          </button>
+          <button *ngFor="let page of pagesNumbers" (click)="changePage(page)"
+            [class.btn-primary]="page == SelectedPage" [class.second-text]="page == SelectedPage"
+            class="m-1 btn btn-light btn-sm">{{page}}</button>
+          <button class="m-1 btn btn-light btn-sm" [disabled]="SelectedPage == pagesNumbers[pagesNumbers?.length - 1]"
+            (click)="changePage(SelectedPage+1)">
+            <i class="fa fa-angle-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

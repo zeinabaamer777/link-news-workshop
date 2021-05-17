@@ -1,0 +1,30 @@
+<div class="news-card bg-white rounded h-100 d-flex flex-column justify-content-between">
+  <div class="card-header">
+    <img [src]="article?.urlToImage ? article?.urlToImage : 'https://via.placeholder.com/200'" alt="">
+  </div>
+  <div class="card-icons px-3 py-2 text-right">
+    <img src="../../../../assets/images/favourite.png" class="mr-2" width="20" alt="favourite">
+    <img src="../../../../assets/images/share.png" alt="share" width="20">
+  </div>
+  <div class="card-title px-3 py-2">
+    <h5>{{article?.title | slice:0:60}}{{article?.title?.length > 60 ? '...' : ''}}</h5>
+  </div>
+  <div class="card-tags  px-3 py-2">
+    <span class="tag">News</span>
+  </div>
+
+  <div class="card-content px-3 py-2">
+    <p class="m-0" *ngIf="article?.description; else content">{{article?.description |
+      slice:0:200}}{{article?.description?.length > 200 ? '...' : ''}}</p>
+    <ng-template #content>
+      <p class="m-0">
+        {{article?.content | slice:0:200}}{{article?.content?.length > 200 ? '...' : ''}}
+      </p>
+    </ng-template>
+  </div>
+  <div class="card-footer px-3 py-3 d-flex align-items-center">
+    <img src="../../../../assets/images/daterange.png" alt="daterange">
+    <p class="published-at m-0 pl-2">{{article?.publishedAt | dateFormate : 'iii L LLL y'}}</p>
+
+  </div>
+</div>

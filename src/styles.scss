@@ -1,8 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+@import "src/app/shared/styles/variables.scss";
+html,
+* {
+  outline: none !important;
+}
+body {
+  background: #efefef;
+}
+a {
+  text-decoration: none;
+}
+a {
+  &:hover {
+    text-decoration: none !important;
+  }
+}
+
+li {
+  list-style: none !important;
+}
+
 .default-btn {
   background-color: rgb(130, 171, 66);
   color: white;
 }
+
 .swiper-pagination-bullet {
   background: rgba($color: #efefef69, $alpha: 0.4) !important;
   width: 10px !important;
@@ -14,4 +36,7 @@
   background: #fff !important;
   width: 12px !important;
   height: 12px !important;
+}
+.btn-light:hover {
+  border-color: transparent;
 }
