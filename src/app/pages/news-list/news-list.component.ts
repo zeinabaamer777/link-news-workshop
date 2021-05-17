@@ -87,7 +87,5 @@ export class NewsListComponent implements OnInit {
     this.selectedCategoryId = param.target.value;
     this.articles = this.articles.filter(el => el.sourceID == this.selectedCategoryId)
   }
-
-
   //#endregion
 }

@@ -45,6 +45,13 @@
     }
   }
 
+  .socialize {
+    text-align: center;
+    @media (max-width: 767px) {
+      text-align: left;
+    }
+  }
+
   .social-media {
     a {
       margin-right: 1.3rem;

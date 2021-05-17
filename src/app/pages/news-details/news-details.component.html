@@ -1,4 +1,4 @@
-<div class="w-100 grey-body article-details">
+<div class="w-100 grey-body article-details" *ngIf="article; else placeholder">
   <div class="container news mt-4 pt-4">
 
     <div class="row mb-4 bread-crumb">
@@ -110,3 +110,9 @@
     </div>
   </div>
 </div>
+
+<template #placeholder>
+  <p class="lead">
+    There's no data here
+  </p>
+</template>
