@@ -77,7 +77,11 @@
   }
 }
 .bread-crumb {
+  margin-top: 1rem;
   a {
     cursor: pointer;
   }
+}
+.main-color {
+  color: var(--main-color);
 }

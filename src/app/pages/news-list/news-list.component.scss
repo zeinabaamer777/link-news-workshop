@@ -1,5 +1,5 @@
 .news-page {
-  margin-top: 4rem;
+  margin-top: 3rem;
 }
 .second-text {
   background-color: var(--green-color);
@@ -154,7 +154,11 @@ select::-ms-expand {
 }
 
 .bread-crumb {
+  margin-top: 1rem;
   a {
     cursor: pointer;
   }
+}
+.main-color {
+  color: var(--main-color);
 }
